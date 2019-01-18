@@ -130,16 +130,26 @@
                 </div>
                 <div>
                     <label for="zipBox">ZIP/Postal Code</label>
-                    <input name="zip" type="text">
+                    <input name="zip" type="text" pattern="^\d{5}(-\d{4})?$">
                 </div>
                 <div>
                     <label for="countryBox">Country</label>
-                    <input name="country" type="text" required>
+                    <input name="country" type="text" value="United States" required>
                 </div>
                 <div>
                     <label for="phoneBox">Phone</label>
-                    <input name="phone" type="tel" required>
+                    <input name="phone" type="tel" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required>
                 </div>
+            </fieldset>
+
+            <fieldset id="creditCard">
+                <legend>Credit Card</legend>
+                <fieldset>
+                    <label for="">Amex</label>
+                    <label for="">Discover</label>
+                    <label for="">Master</label>
+                    <label for="">Visa</label>
+                </fieldset>
             </fieldset>
         </form>
 
