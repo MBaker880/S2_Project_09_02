@@ -54,27 +54,27 @@
 
                 <div>
                     <label for="firstBox">First Name</label>
-                    <input name="fName" type="text" required>
+                    <input name="fName" id="firstBox" type="text" required>
                 </div>
                 <div>
                     <label for="lastBox">Last Name</label>
-                    <input name="lName" type="text" required>
+                    <input name="lName" id="lastBox" type="text" required>
                 </div>
                 <div>
                     <label for="streetBox">Street Address</label>
-                    <input name="street" type="text" required>
+                    <input name="street" id="streetBox" type="text" required>
                 </div>
                 <div>
                     <label for="streetBox2">Street Address (2)</label>
-                    <input name="street2" type="text">
+                    <input name="street2" id="streetBox2" type="text">
                 </div>
                 <div>
                     <label for="cityBox">City</label>
-                    <input name="city" type="text" required>
+                    <input name="city" id="cityBox" type="text" required>
                 </div>
                 <div>
                     <label for="stateBox">State</label>
-                    <input name="state" type="text" list="stateList" required>
+                    <input name="state" id="stateBox" type="text" list="stateList" required>
                     <datalist id="stateList">
                         <option value="AL"></option>
                         <option value="AK"></option>
@@ -130,15 +130,15 @@
                 </div>
                 <div>
                     <label for="zipBox">ZIP/Postal Code</label>
-                    <input name="zip" type="text" pattern="^\d{5}(-\d{4})?$">
+                    <input name="zip" id="zipBox" type="text" pattern="^\d{5}(-\d{4})?$">
                 </div>
                 <div>
                     <label for="countryBox">Country</label>
-                    <input name="country" type="text" value="United States" required>
+                    <input name="country" id="countryBox" type="text" value="United States" required>
                 </div>
                 <div>
                     <label for="phoneBox">Phone</label>
-                    <input name="phone" type="tel" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required>
+                    <input name="phone" id="phoneBox" type="tel" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required>
                 </div>
             </fieldset>
 
