@@ -45,11 +45,12 @@
         </nav>
     </header>
 
+    <!-- Creates a text box for users to input their personal information while also limiting what they can place within the specific field. Also requires users to input their info in the necessary fields. -->
     <section>
         <h1>Payment Form</h1>
 
         <form id="payment" action="http://www.example.com/sb/payment">
-            <fieldset id="billing">
+            <fieldset id="billing" required>
                 <legend>Billing Information (Required)</legend>
 
                 <div>
@@ -72,6 +73,7 @@
                     <label for="cityBox">City</label>
                     <input name="city" id="cityBox" type="text" required>
                 </div>
+                <!-- Creates a list of all the lists located in the U.S. in thier two lettered abreviations. -->
                 <div>
                     <label for="stateBox">State</label>
                     <input name="state" id="stateBox" type="text" list="stateList" required>
@@ -128,6 +130,7 @@
                         <option value="WY"></option>
                     </datalist>
                 </div>
+                <!-- Requires the zip to be so many numbers in order to be a valid input. -->
                 <div>
                     <label for="zipBox">ZIP/Postal Code</label>
                     <input name="zip" id="zipBox" type="text" pattern="^\d{5}(-\d{4})?$">
@@ -136,21 +139,80 @@
                     <label for="countryBox">Country</label>
                     <input name="country" id="countryBox" type="text" value="United States" required>
                 </div>
+                <!-- Requires the phone number to be so many numbers in order to be a valid input. -->
                 <div>
                     <label for="phoneBox">Phone</label>
                     <input name="phone" id="phoneBox" type="tel" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required>
                 </div>
             </fieldset>
 
+            <!-- Creates a field for the information on the credit?debit care the user is paying with. Sets the buttons as radio instead of being text boxes, they are buttons. -->
             <fieldset id="creditCard">
-                <legend>Credit Card</legend>
-                <fieldset>
-                    <label for="">Amex</label>
-                    <label for="">Discover</label>
-                    <label for="">Master</label>
-                    <label for="">Visa</label>
+                <legend >Credit Card (Required)</legend>
+                <fieldset class="cardLabel" required>
+                    <label class="cardLabel" for="amex">
+                        <input id="amex" value="Amex" type="radio">
+                        <img src="sb_amex.png" alt="amex">
+                    </label>
+                    <label class="cardLabel" for="discover">
+                        <input id="discover" value="Discover" type="radio">
+                        <img src="sb_discover.png" alt="discover">
+                    </label>
+                    <label class="cardLabel" for="master">
+                        <input id="master" value="Master" type="radio">
+                        <img src="sb_master.png" alt="master">
+                    </label>
+                    <label class="cardLabel" for="visa">
+                        <input id="visa" value="Visa" type="radio">
+                        <img src="sb_visa.png" alt="visa">
+                    </label>
                 </fieldset>
+
+                <!-- Enables the user to only input the correct card information or the submit wont fo through. -->
+                <div>
+                    <label for="cardBox">Credit Card Number</label>
+                    <input name=" cardNumber" id="cardBox" type="text" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$">
+                </div>
+                <!-- Creates a selection list with the obtions of all the months janurary through december. -->
+                <div>
+                    <label for="cardMonth">Expiration Date</label>
+                    <select id="monthList" required>
+                        <option value="-">--Month--</option>
+                        <option value="1">Janurary (01)</option>
+                        <option value="2">February (02)</option>
+                        <option value="3">March (03)</option>
+                        <option value="4">April (04)</option>
+                        <option value="5">May (05)</option>
+                        <option value="6">June (06)</option>
+                        <option value="7">July (07)</option>
+                        <option value="8">August (08)</option>
+                        <option value="9">September (09)</option>
+                        <option value="10">October (10)</option>
+                        <option value="11">November (11)</option>
+                        <option value="12">December (12)</option>
+                    </select>
+                    <!-- Creates a selection list with the options of the upcoming years/ I updated them to be more accurate since it is currently 2019. -->
+                    <select id="yearList">
+                        <option value="-">--Year--</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+                <!-- Creates a text box for the csc number with restrictions that only let the user input three numbers and is set as a required input. -->
+                <div>
+                    <label for="cscBox">CSC</label>
+                    <input id="cscBox" type="text" maxlength="3" pattern="^\d{3}$" placeholder="nnn" required>
+                </div>
             </fieldset>
+            <!-- The button that when clicked, send the data to another place if the information inputed is valid. -->
+            <div>
+                <button type="submit">
+                    <img src="sb_button.png" alt="next">
+                </button>
+            </div>
         </form>
 
         <aside>
